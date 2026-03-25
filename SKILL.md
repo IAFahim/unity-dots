@@ -6,8 +6,6 @@ description: |
   6-assembly architecture, zero-allocation hot paths, Facets, EntityCommands,
   UI Toolkit MVVM (Anchor), Managed/DOTS sync (Bridge), Timeline, and Quill debug drawing.
   Optimized for safe Unity CLI operation: inspect first, mutate second, verify before claiming success.
-allowed-tools:
-  - *
 ---
 
 # SYSTEM CAPABILITY: `unity-cli`
