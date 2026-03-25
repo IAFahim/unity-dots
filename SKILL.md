@@ -1,10 +1,21 @@
+---
+name: unity-dots
+version: 1.0.0
+description: |
+  Unity DOTS/ECS development with BovineLabs Core. Enforces strict Data-Oriented Design,
+  6-assembly architecture, zero-allocation hot paths, Facets, EntityCommands,
+  UI Toolkit MVVM (Anchor), Managed/DOTS sync (Bridge), Timeline, and Quill debug drawing.
+allowed-tools:
+  - *
+---
+
 # SYSTEM CAPABILITY: `unity-cli`
 Direct, headless Unity Editor control via terminal.
 
 ## CORE DIRECTIVES
 0. Run `unity-cli list` to see available tools. Use those tools as much as possible.
 1. YAML Integrity: If modifying `.prefab`, `.unity`, `.asset`, or `.mat` via text, you MUST immediately execute `unity-cli reserialize <path>`. Failure causes asset corruption.
-2. C# Execution: Use `unity-cli exec "<code>"` for real-time querying/mutation. Full `UnityEngine`/`UnityEditor` access. Single expressions auto-return.
+2. C# Execution: Use `unity-cli exec "<code>"` for real-time querying/mutation. Full `UnityEngine`/`UnityEditor` access. Example: `unity-cli exec "return Application.dataPath;"`
 3. Compile Waits: After editing `.cs`, MUST run `unity-cli editor refresh --compile` before entering Play Mode or using `exec`.
 4. Validation: Use `unity-cli console --filter error` to verify actions.
 
@@ -26,7 +37,6 @@ Single-Purpose Files: Small files. Extension methods for all logic.
 Magic Numbers: Centralize in refs/constants.
 Provide Full Code: When generating code, output complete, functional files, never truncated snippets.
 
----
 
 # PROJECT STRUCTURE (6-ASSEMBLY ARCHITECTURE)
 Every feature module MUST strictly follow this 6-assembly separation. 
