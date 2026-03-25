@@ -27,6 +27,24 @@ unity-cli exec "return World.All.Count;" --usings Unity.Entities
 echo 'Debug.Log("hello"); return null;' | unity-cli exec
 echo 'var go = new GameObject("Marker"); go.tag = "EditorOnly"; return go.name;' | unity-cli exec
 ```
+Note: watchout for those kind of stupidity
+```
+❯ move the camera to zero
+● Bash(unity-cli exec "var cam = Camera.main; if (cam != null) { cam.transform.position = UnityEngine.Vector3.zero; return 'MainCamera moved to (0,0,0)'; } else { retu…)    
+  ⎿  Error: Exit code 1
+     Error: Compile error:                                     L15: ) expected                                   L15: Invalid expression term ''
+     L15: ; expected
+     L15: Unexpected character '\'             
+     L15: Invalid expression term '!='     L15: ; expected           
+     L15: } expected                           
+     L15: Too many characters in character literal
+     … +6 lines (ctrl+o to see all)
+● Bash(echo 'var cam = Camera.main; if (cam != null) { cam.transform.position = UnityEngine.Vector3.zero; return "MainCamera moved to (0,0,0)"; } else { return "No mai…)
+  ⎿  No main camera found
+● Bash(echo 'var cams = UnityEngine.Object.FindObjectsOfType<Camera>(); if (cams.Length > 0) { cams[0].transform.position = UnityEngine.Vector3.zero; return $"Moved {c…)
+  ⎿  Moved Camera to (0,0,0)                          
+● Camera moved to (0,0,0).  Success 
+```
 3. Compile Waits: After editing `.cs`, MUST run `unity-cli editor refresh --compile` before entering Play Mode or using `exec`.
 4. Validation: Use `unity-cli console --filter error` to verify actions.
 
