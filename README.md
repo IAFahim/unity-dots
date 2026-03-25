@@ -15,7 +15,11 @@ mkdir -p ~/.claude/skills/unity-dots
 
 ## Usage
 
-Invoke via `/unity-dots` or let it auto-trigger when working with Unity ECS/DOTS code.
+Invoke via `/unity-dots` or it **auto-triggers** for ANY Unity project:
+- Files in `Assets/`, `Packages/`, `Scripts/`, `ProjectSettings/`
+- Unity file extensions: `.unity`, `.asset`, `.prefab`, `.asmdef`, `.unitypackage`
+- C# files importing Unity namespaces (`Unity.Entities`, `UnityEngine`, etc.)
+- When you ask about Unity, ECS, DOTS, or BovineLabs
 
 ## Documentation Files
 
