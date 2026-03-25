@@ -15,7 +15,7 @@ Direct, headless Unity Editor control via terminal.
 ## CORE DIRECTIVES
 0. Run `unity-cli list` to see available tools. Use those tools as much as possible.
 1. YAML Integrity: If modifying `.prefab`, `.unity`, `.asset`, or `.mat` via text, you MUST immediately execute `unity-cli reserialize <path>`. Failure causes asset corruption.
-2. C# Execution: Use `unity-cli exec "<code>"` for real-time querying/mutation. Full `UnityEngine`/`UnityEditor` access. Example: `unity-cli exec "return Application.dataPath;"`
+2. C# Execution: Use `unity-cli exec "<code>"` for real-time querying/mutation. Full `UnityEngine`/`UnityEditor` access. Example: `unity-cli exec "return Application.dataPath;"` Don't forget the return part.
 3. Compile Waits: After editing `.cs`, MUST run `unity-cli editor refresh --compile` before entering Play Mode or using `exec`.
 4. Validation: Use `unity-cli console --filter error` to verify actions.
 
