@@ -18,6 +18,7 @@ Direct, headless Unity Editor control via terminal.
 2. C# Execution: Use `unity-cli exec "<code>"` for real-time querying/mutation. Full `UnityEngine`/`UnityEditor` access. 
 ### Example: 
 ```
+unity-cli exec "return UnityEngine.Object.FindObjectsOfType<Camera>().Length;"
 unity-cli exec "return Application.dataPath;"
 unity-cli exec "return EditorSceneManager.GetActiveScene().name;"
 unity-cli exec "return World.All.Count;" --usings Unity.Entities
