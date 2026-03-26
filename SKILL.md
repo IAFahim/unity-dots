@@ -246,10 +246,3 @@ When reporting progress, use this order:
 - the remaining blocker, if any
 
 Never compress these into a vague success statement.
-
-Check those too, as many features are already provided:
-- [ScriptStructure.md](ScriptStructure.md)
-- [Gizmo.md](Gizmo.md)
-- [Anchor.md](Anchor.md)
-- [Stats.md](Stats.md)
-- [Bridge.md](Bridge.md)
