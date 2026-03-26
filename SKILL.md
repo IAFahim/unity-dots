@@ -29,7 +29,7 @@ Direct, headless Unity Editor control via terminal.
   - current parent/child hierarchy
   Reuse existing objects first. Create only after absence is confirmed.
 
-- Prefer stdin for Non-Trivial `exec`: If the C# contains quotes, interpolated strings, conditionals, generics, lambdas, namespaces, LINQ, or more than one statement, DO NOT use inline shell quoting.
+- Always Prefer stdin for Non-Trivial `exec`: If the C# contains quotes, interpolated strings, conditionals, generics, lambdas, namespaces, LINQ, or more than one statement, DO NOT use inline shell quoting.
   Use:
   ```bash
   echo 'Debug.Log("hello"); return null;' | unity-cli exec
